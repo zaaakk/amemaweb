@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amema</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.js"></script>
+<!--      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/addons/p5.dom.js"></script> -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+   <script type="text/javascript" src="https://rawgit.com/bradley/Blotter/master/build/blotter.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/bradley/Blotter/master/build/materials/liquidDistortMaterial.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/bradley/Blotter/master/build/materials/channelSplitMaterial.js"></script>
+  
+  </head>
+  <body>
+    <script type="text/javascript">
+$(function() {
+    $("#mainitem1").draggable();
+   $("#mainitem2").draggable();
+  $("#mainitem3").draggable();
+  $("#mainitem4").draggable();
+  $("#mainitem5").draggable();
+});
+</script>
+    
+<!--     <script src="/sketch.js"></script>  -->
+    
+
+    <div id="title">
+      <div id="leftlink">
+        Buy tickets + raffle
+      </div>
+      
+      <div id="maintitle">
+        
+      
+<!--         <h1>
+    Amema
+  </h1> -->
+        <a href="/index.html"> <div id="titlemain"></div></a>
+    
+      </div>
+      
+        
+        <div id="subtitle">
+          American Museum of Electronic + Material Art
+        </div>     
+             <div id="rightlink">
+        Connect + 
+               visit
+      </div>
+        
+        
+
+    
+    <div id="menu">
+      <div id="menuitems">
+        
+   <div class="menuitem">
+        <a href="/events.html">Exhibits + 
+          Events</a>
+      </div>
+      <div class="menuitem">
+        <a href="/art.html">Art + 
+          Artists</a>
+      </div>
+       <div class="menuitem">
+          <a href="/shop.html">
+        Shop + 
+        Resources
+         </a>
+      </div>
+        
+          </div>
+    </div>
+
+   <div id="urcontainer">
+  
+    
+   
+<div id="container">
+  <div class="block">
+    
+
+  <p>
+    April 17th 2018: Exhibition at Rockefeller Library.
+  </p>
+  </div>
+     </div>
+      </div>
+
+    <div id="footer">
+      <div id="footerchunk">
+      <h3>
+         Copyright 2018 Amema Industries in Association with RareWare and All Rights Reserved. 
+      </h3>
+          </div>
+      <img src="https://cdn.glitch.com/e4030d4f-d24d-4d27-9745-9b07ee47048b%2Fbutterfly.png?1519338560136"/>
+    </div>
+    </div>
+  </body>
+  
+
+    <script type="text/javascript">
+    var text = new Blotter.Text("Amema", {
+  family : "'EB Garamond', serif",
+  size : 70,
+  fill : "#000000",
+  paddingLeft : 40,
+  paddingRight : 40
+});
+      
+      
+        var text2 = new Blotter.Text("colorcorrect", {
+  family : "'Helvetica', sans-serif",
+  size : 30,
+  fill : "#3e464f",
+  paddingLeft : 40,
+  paddingRight : 40,
+});
+
+var material = new Blotter.LiquidDistortMaterial();
+ var material2 = new Blotter.ChannelSplitMaterial();     
+
+// Play with the value for uSpeed. Lower values slow
+// down animation, while higher values speed it up. At
+// a speed of 0.0, animation is stopped entirely.
+material.uniforms.uSpeed.value = 0.025;
+      
+    material2.uniforms.uOffset.value = 0.09;
+      material2.uniforms.uRotation.value = 258;
+      material2.uniforms.uApplyBlur.value = 1.0;
+      material2.uniforms.uAnimateNoise.value =0.0;
+
+// Try uncommenting the following line to play with
+// the "volatility" of the effect. Higher values here will
+// produce more dramatic changes in the appearance of your
+// text as it animates, but you will likely want to keep
+// the value below 1.0.
+//material.uniforms.uVolatility.value = 0.30;
+
+var blotter = new Blotter(material, {
+  texts : text
+});
+      var blotter2 = new Blotter(material2, {
+  texts : text2
+});
+
+var elem = document.getElementById("titlemain");
+var elem2 = document.getElementById("colorcorrect");
+var scope = blotter.forText(text);
+var scope2 = blotter2.forText(text2);     
+
+      scope.appendTo(elem);
+   scope2.appendTo(elem2);</script>
+  
+</html>
